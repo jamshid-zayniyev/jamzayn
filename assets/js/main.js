@@ -245,3 +245,86 @@
   new PureCounter();
 
 })()
+
+const Name = document.getElementById("name")
+const Email = document.getElementById("email")
+const Subject = document.getElementById("subject")
+const Message = document.getElementById("message")
+
+ Getdata=(e)=>{
+  // console.log("work");
+ if(Name.value ==="" || Email.value ===""||Subject.value ===""||Message.value ===""){
+  alert("Ma'lumotlarni to'liq kiriting")
+ }
+ else{
+  emoji = [
+    {
+      emoji: "✅",
+      description: "check mark button",
+      category: "Symbols",
+      aliases: ["white_check_mark"],
+      tags: [],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "📞",
+      description: "telephone receiver",
+      category: "Objects",
+      aliases: ["telephone_receiver"],
+      tags: ["phone", "call"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "⏰",
+      description: "alarm clock",
+      category: "Travel & Places",
+      aliases: ["alarm_clock"],
+      tags: ["morning"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "👤",
+      description: "bust in silhouette",
+      category: "People & Body",
+      aliases: ["bust_in_silhouette"],
+      tags: ["user"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "💬",
+      description: "speech balloon",
+      category: "Smileys & Emotion",
+      aliases: ["speech_balloon"],
+      tags: ["comment"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+    {
+      emoji: "📆",
+      description: "tear-off calendar",
+      category: "Objects",
+      aliases: ["calendar"],
+      tags: ["schedule"],
+      unicode_version: "6.0",
+      ios_version: "6.0",
+    },
+  ];
+  var text = `%0A  ${emoji[0].emoji} <b> Name: </b><i class="fa fa-check-square">${Name.value}</i>%0A ${emoji[1].emoji} <b>Email: </b><i class="fa fa-check-square">${Email.value}</i>%0A ${emoji[3].emoji} <b>Subject: </b><i class="fa fa-check-square">${Subject.value}</i>%0A ${emoji[4].emoji} <b>Message: </b><i class="fa fa-check-square">${Message.value}</i>`
+
+var token = "5728991743:AAFCog0ocEDfi9umMGWU0Lr0ZEYoRKcqvCI"
+var chat_id = -1001836669475;   
+var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}&parse_mode=html`;
+let api = new XMLHttpRequest()
+api.open("GET",url,true)
+api.send()
+// console.log("Message succesfully sended !");
+Name.value=""
+Email.value=""
+Subject.value=""
+Message.value=""
+ }
+}
