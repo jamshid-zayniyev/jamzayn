@@ -315,7 +315,7 @@ const Message = document.getElementById("message")
   ];
   var text = `%0A  ${emoji[0].emoji} <b> Name: </b><i class="fa fa-check-square">${Name.value}</i>%0A ${emoji[1].emoji} <b>Email: </b><i class="fa fa-check-square">${Email.value}</i>%0A ${emoji[3].emoji} <b>Subject: </b><i class="fa fa-check-square">${Subject.value}</i>%0A ${emoji[4].emoji} <b>Message: </b><i class="fa fa-check-square">${Message.value}</i>`
 
-var token = "5728991743:AAFCog0ocEDfi9umMGWU0Lr0ZEYoRKcqvCI"
+var token = '5728991743:AAFCog0ocEDfi9umMGWU0Lr0ZEYoRKcqvCI'
 var chat_id = -1001836669475;   
 var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${text}&parse_mode=html`;
 let api = new XMLHttpRequest()
